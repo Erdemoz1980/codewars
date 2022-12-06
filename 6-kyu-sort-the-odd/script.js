@@ -1,20 +1,18 @@
 function sortArray(array) {
 
-  let numsIndexed = new Array(array.length);
-  let odds = [];
+  const sortedOdds = array.filter(item=>item%2!==0 && item).sort((a,b)=>a-b)
     
     for (i=0; i<array.length;i++){
       if(array[i]%2===0){
-        numsIndexed.splice(i,1,array[i])
-      }else{
-        odds.splice(i,1,array[i]);
-        odds.sort((a,b)=>a-b);       
+        sortedOdds.splice(i,0,array[i])
       }
     }
+    
   
-  return console.log(numsIndexed, odds) 
+  return sortedOdds
   
   }
+  
 
 
 /*Task
