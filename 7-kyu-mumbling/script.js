@@ -32,7 +32,7 @@ function accum(s) {
 
 
   capped.pop()
-  return capped.join('')
+  return console.log(capped.join(''));
 }
 
 accum('accessoires')
