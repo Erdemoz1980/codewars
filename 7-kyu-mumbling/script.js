@@ -8,6 +8,7 @@ function accum(s) {
     for(i=0;i<=n;i++){
       duplicates.push(element.toLowerCase())
     }
+    duplicates.push('-')
   }
   
   //Create duplicates based on index
@@ -15,34 +16,32 @@ function accum(s) {
     repeater(item,index)
   });
   
-//Insert dashes    
-let dashed = [];  
-for(i=0; i<duplicates.length;i++){
-  if(duplicates[i]!==duplicates[i+1]){
-    dashed.push(duplicates[i]);
-    dashed.push('-')
-    
-  }else{
-    dashed.push(duplicates[i])
-  }
-}
   
   //Capitilize letters
   let capped = [];
   
-   for(i=0;i<dashed.length;i++){
-     if(dashed[i]===undefined) return;
+   for(i=0;i<duplicates.length;i++){
      if(i===0){
-       capped.push(dashed[i].toUpperCase())
-     }else if(dashed[i-1]==='-'){
-         capped.push(dashed[i].toUpperCase());
+       capped.push(duplicates[i].toUpperCase())
+     }else if(duplicates[i-1]==='-'){
+         capped.push(duplicates[i].toUpperCase());
      }else{
-       capped.push(dashed[i])
+       capped.push(duplicates[i])
      }
    }
 
 
-  return dashed
+  capped.pop()
+  return capped.join('')
 }
 
 accum('accessoires')
+
+/*This time no story, no theory. The examples below show you how to write function accum:
+
+Examples:
+accum("abcd") -> "A-Bb-Ccc-Dddd"
+accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+accum("cwAt") -> "C-Ww-Aaa-Tttt"
+The parameter of accum is a string which includes only letters from a..z and A..Z.
+*/
