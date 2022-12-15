@@ -7,20 +7,18 @@ function dirReduc(arr){
     EAST:'WEST'
   };
     
- for(i=0;i<arr.length;i++){
-   if(arr[i+1]===opposites[arr[i]]){
-     arr.splice(i,2)
-   } 
- }
+  for(i=0;i<arr.length;i++){
+    if(arr[i+1]===opposites[arr[i]]){
+      arr.splice(i,2)
+      count++;
+       //Count is the recursion resumption for the entire function.
+      i--
+      //reducing i by one so that we can check first and second items again.
+      //Also recursion resumption for the FOR LOOP.
+    } 
+  }
   
-   for(i=0;i<arr.length;i++){
-   if(arr[i+1]===opposites[arr[i]]){
-     arr.splice(i,2)
-   } 
- }
-  
- 
-  return arr
+  return count ===0 ? arr : dirReduc(arr)  
 
   
 }
