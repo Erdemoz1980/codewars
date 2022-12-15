@@ -1,5 +1,5 @@
 function dirReduc(arr){
-    
+  let count = 0;
   const opposites = {
     NORTH:'SOUTH',
     SOUTH:'NORTH',
