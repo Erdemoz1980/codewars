@@ -1,18 +1,28 @@
 function stockList(books, cats){
+  
   let booksQts = {};
 
+  //Create categories
   cats.forEach(cat => {
     booksQts[cat] = 0
   })
    
+  //Populate categories with total numbers
   for (i = 0; i < books.length; i++){
     let bookCat = books[i][0];
     let bookQty = Number(books[i].split(' ')[1]);
-    booksQts[bookCat] = (booksQts[bookCat] || 0)+bookQty ;
+    booksQts[bookCat] = (booksQts[bookCat] || 0)+bookQty ;  
+    
   }
-
-
-console.log(booksQts)
+  
+  let result = [];
+  let arr = Object.entries(booksQts)
+     
+  for(i=0;i<arr.length;i++){
+     arr[i].splice(0,2,'(',arr[i][0],':',arr[i][1],')')           
+  }
+  
+  console.log(arr)
   
   }
 
