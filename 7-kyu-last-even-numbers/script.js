@@ -1,0 +1,16 @@
+function evenNumbers(array, number) {
+  
+  let evens = [];
+  for(i=0; i<array.length;i++){
+    
+    if(array[i]%2===0){
+      evens.push(array[i])
+    }
+  }
+  
+  return evens.slice(evens.length-number, evens.length)
+  
+}
+
+
+//Given an array of numbers, return a new array of length number containing the last even numbers from the original array (in the same order). The original array will be not empty and will contain at least "number" even numbers.
